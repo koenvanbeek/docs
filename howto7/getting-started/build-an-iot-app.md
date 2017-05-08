@@ -6,7 +6,7 @@ description: "_____"
 tags: ["iot", ________]
 ---
 
-## Introduction
+## Introduction - zin er bij hallo wereld
 
 The application of IoT solutions to logistics ensures that the transport of goods and products can be tracked more closely. This helps to maintain both shipment quality and supply chain security. Item locations can be tracked with sensors and IoT apps at borders, in ports and warehouses, even on store shelves. The vehicles delivering these products can also be implemented with data points for monitoring. The communication of inventory and transport information enables making quick changes to the supply chain when necessary.
 
