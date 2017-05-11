@@ -7,7 +7,7 @@ tags: ["iot", ________]
 ---
 
 ## Introduction
-In our recent campain around IoT we have written a lot about the Logistics IoT app we created to fill the gap of available IoT examples. With this tutorial we want to take it one step further and have you experience the combination Mendix developement and IoT.
+In our recent campain around IoT we have written a lot about the Logistics IoT app we created to fill the gap of available IoT examples. With this tutorial we want to take it one step further and have you experience the combination of Mendix developement and IoT.
 
 ## The idea behind the Logistics App 
 One of the critical issues facing manufacturers, suppliers, carriers and ultimately customers across the supply chain is ensuring that transported goods arrive at their target destination, safe and fit for their purpose. Whilst in transit, there are many factors that can adversely affect cargo, such as exposure to light, temperature increases and decreases, movement, and humidity to name a few.
@@ -46,7 +46,7 @@ To deploy and view the app, follow these steps:
 
 ## 1 Connecting App Pages
 
-In this section, you are going to observe the app in the development environment. You will make your first change, which will enable the end-user to view the live details of a shipment selected from the shipment overview.
+In this section, you are going to observe the app in the development environment. You will make your first change, which will enable you to view the live details of the shipments listed on the shipments overview.
 
 To connect an app page, follow these steps:
 
@@ -87,23 +87,23 @@ To configure the handling of the sensor data, follow these steps:
 1. Return to the **IVK_Subscribe** microflow and double-click the **Data - Subscribe to MQTT topic** activity.
 2. Change the **On message microflow** to **IVK_OnMessage_HandleData** (located in the **Step 3** folder), which is the microflow that is triggered whenever AWS is sending data. It was originally configured to appear in the **Console**, and now you are configuring it to appear on the page.
     * The **Payload** parameter contains a message in JSON format, which is a lightweight data-interchange format. To work with this data we need to turn it into an object by mapping the JSON message to an entity. In this microflow the JSON message is mapped to a **SensorData** object. The **Topic** parameter is used to retrieve the **Topic** object from the database in order to retrieve the **Shipment object** associated to it.
-3. Now you need to associate the shipment object with the sensor data object created from the JSON response. Add a **Change object** activity and double click it to edit it. Set the **Variable** to **SensorData**, and set **Commit** to **Yes**, which will persist the object to the database. Click **New** to add the **Tutorial_Workspace.SensorData_Topic** attribute and enter this **value**: `$Topic`.
-4. You need to update the shipment, so add a **Change object** activity to the flow:<br>
+3. Now you need to associate the shipment object with the sensor data object created from the JSON response. Add a **Change object** activity and double click it to edit it. Set the **Variable** to **SensorData**, and set **Commit** to **Yes**, which will persist the object to the database. Click **New** to add the **Tutorial_Workspace.SensorData_Topic** attribute and enter this **value**: `$TopicObject`.
+4. On the details page we like to show the date ad time the latest sensor data is received. For this you need to add a **Change object** activity to the flow:<br>
     a. Set the **Variable** to **Shipment**.<br>
     b. Set **Commit** to **Yes**.<br>
     c. Click **New** to add a new change item. Set the **Member** to **LatestSensorUpdate**.<br>
     d. Click **Generate** to set the **Expression value** to **Token** with **CurrentDateTime**.<br>
     e. Click **OK**. This new microflow action will allow you to see the last date a message from AWS was recieved on the **Shipment_Detail** page.
 5. Save the changes, click **Run Locally**, then click **View App**.
-6. In the app, click **Subscribe** and observe the temperature updating.
+6. In the app, click **Subscribe** and observe the temperature chart updating as data is being pushed to the app!
 
 ## 4 Adding Another Data Dimension to the App
 
-In this section, you are going to enrich the data details that are configurable in the app so that you can categorize shipments based on the cargo type.
+Now that data is received we can implement functionality to act on any outliers in the data. In this section, you are going to create alerts when thresholds for different measurements are met. 
 
 ### 4.1 Adding Cargo Type Pages
 
-In this section, you are going to introduce a cargo type with which you can register the thresholds for different measurements (for example, temperature and light). For an example scenario here, if a ship is transporting perishable goods, you will want to see an alert for any extreme activity with the indicators. 
+Not every cargo type should have the same threshold. Before you start working on the alert implementation, you are going to introduce a cargo type and register its thresholds for different measurements (for example, temperature and light). For an example scenario here, if a ship is transporting perishable goods, you will want to see an alert for any extreme activity with the indicators. 
 
 To add the cargo type pages, follow these steps:
 
