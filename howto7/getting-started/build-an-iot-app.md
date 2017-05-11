@@ -132,7 +132,7 @@ To add the cargo type pages, follow these steps:
 14. Keep **Database** selected for the **Type**, but clear the **Automatically fill the contents of the list view** check box.
 15. Drag the **Description** attribute from the **Connector** pane to the first input field in the list view.
 16. Remove the other two input fields as well as the **Edit details** button, because you only want to show the **Description**.
-17. You need to create a mechanism that will open a page where you can add new items, so now do the following:<br>
+17. In order to add new 'Cargo type' items in the application you need to create a page where you can submit new cargo types. So now do the following:<br>
     a. Right-click the row of the outer layout grid and select **Insert row above**.<br>
     b. Select the default **full** row option.<br>
     c. Right-click the new row and select **Add widget** > **Button** > **Create button**.<br>
