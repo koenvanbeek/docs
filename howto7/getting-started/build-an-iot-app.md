@@ -37,11 +37,11 @@ Start by running the application so that you can experience how this app looks. 
 
 To deploy and view the app, follow these steps:
 
-1. In the Modeler, click **Run Locally** and then click **View App** to see the app in your browser.
+1. In the Modeler, click **Run Locally** and then click **View App** to see the app in your browser.![alt text](attachments/build-an-iot-app/deploy-and-view-blurred.png "Run Locally, View app")
 2. The app starts on the homepage in the workspace section of the app, which is an overview of all the shipments are listed.
-3. Click the menu button in the top-right corner of the app to open the side menu. From here, you can navigate to other pages in the app where you can edit the data. 
+3. Click the menu button in the top-right corner of the app to open the side menu. From here, you can navigate to other pages in the app where you can edit the data in this app. 
 4. Select **Shipments** and click **Edit** on the preconfigured shipment, which will bring you to the **Shipment** form. Here you can edit the details about the shipment.
-5. On the right-side of the screen, click the toggle with the user icon (located above the **Feedback** button). Switch to the **Tutorial_completed** section of the app, which contains the completed pages for you to use as a reference as well as a different data set.
+5. On the right-side of the screen, click the toggle with the user icon (located above the **Feedback** button). Switch to the **Tutorial_completed** section of the app, which contains the completed pages for you to use as a reference. **Tutorial_completed** and **Tutorial_workspace** both have their own data set.
 6. Click a container from the shipment overview to inspect the page with the container sensor details. This is the page that you are going to build in this tutorial.
 
 ## 1 Connecting App Pages
