@@ -24,7 +24,7 @@ This app obtains and measures data from various sensors in individual cargo ship
 
 ## Let's go!
 
-Before starting this tutorial, create a new instance of the Logistics IoT app using the [Mendix Platform Portal](https://home.mendix.com/link/startnewproject). After the **Logistics IOT** app has been created you can open the app in the Modeler. 
+Before starting this tutorial, create a new instance of the Logistics IoT app using the [Mendix Platform Portal](https://sprintr.home.mendix.com/link/startnewproject). After the **Logistics IOT** app has been created you can open the app in the Modeler. 
 [Download](https://appstore.mendix.com/link/modelers) and install the Modeler in case you haven't done so already.
 
 The app contains two different tutorial modules: 
@@ -41,7 +41,7 @@ To deploy and view the app, follow these steps:
 2. The app starts on the homepage in the workspace section of the app, which is an overview of all the shipments are listed.
 3. Click the menu button in the top-right corner of the app to open the side menu. From here, you can navigate to other pages in the app where you can edit the data in this app. 
 4. Select **Shipments** and click **Edit** on the preconfigured shipment, which will bring you to the **Shipment** form. Here you can edit the details about the shipment.
-5. On the right-side of the screen, click the toggle with the user icon (located above the **Feedback** button). Switch to the **Tutorial_completed** section of the app, which contains the completed pages for you to use as a reference. **Tutorial_completed** and **Tutorial_workspace** both have their own data set.
+5. On the right-side of the screen, click the toggle with the user icon (located above the **Feedback** button). Switch to the **Tutorial_completed** section of the app, which contains the completed pages for you to use as a reference. **Tutorial_completed** and **Tutorial_workspace** both have their own data set. ![alt text](attachments/build-an-iot-app/user-switcher.png "Use the user switcher to toggle between demo users.")
 6. Click a container from the shipment overview to inspect the page with the container sensor details. This is the page that you are going to build in this tutorial.
 
 ## 1 Connecting App Pages
