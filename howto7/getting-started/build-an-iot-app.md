@@ -125,13 +125,13 @@ To add the cargo type pages, follow these steps:
     c. Enter *CargoType_Overview* for the **Page name** and select **TopBar_Sidebar_Full_Responsive** for the **Navigation layout**.<br>
     d. Select **Grids** and then **Listview basic**.<br>
     e. Click **OK**.<br>
-10. In the **Properties** pane of the newly created page, set the **Navigation** visibility to **User**.
-11. Right-click the row of the navigation list in which the **Cargo Types** label is located and select **Go to page**, which will take you to the **CargoType_Overview** page. 
+10. Right-click the row of the navigation list in which the **Cargo Types** label is located and select **Go to page**, which will take you to the **CargoType_Overview** page. 
+11. In the **Properties** pane of the newly created page, set the **Navigation** visibility to **User**.
 12. Right-click the list view and select **Select entity...**.
 13. In the **Select Data Source** dialog box, select the **CargoType** entity that you just created.
 14. Keep **Database** selected for the **Type**, but clear the **Automatically fill the contents of the list view** check box.
 15. Drag the **Description** attribute from the **Connector** pane to the first input field in the list view.
-16. Remove the other two input fields as well as the **Edit details** button, because you only want to show the **Description**.
+16. Delete the other two input fields as well as the **See details** button, because you only want to show the **Description**.
 17. In order to add new 'Cargo type' items in the application you need to create a page where you can submit new cargo types. So now do the following:<br>
     a. Right-click the row of the outer layout grid and select **Insert row above**.<br>
     b. Select the default **full** row option.<br>
@@ -141,19 +141,20 @@ To add the cargo type pages, follow these steps:
     f. In the **Create page** editor, change the **Navigation layout** to **PopupLayout**, then choose **Form basic horizontal**.<br>
 18. Back on **CargoType_Overview**, right-click the **New** button and select **Go to page**.
 19. On the **CargoType_NewEdit** form, click the **Cancel** button and in the **Properties** pane, change the **Button style** to **Danger**.
-20. While in the **Properties** pane, set the **Navigation** visibility to **User**.
-21. Return to **CargoType_Overview**, where you need to add two new buttons. Right-click the left-side column in the grid and select **Add column right**.
+20. Click in the page so that its properties become visible in the **Properties** pane. Set the **Navigation > Visible for ** property to **User**.
+21. Return to **CargoType_Overview**, which needs the same look and feel as the other pages. Right-click the left-side column in the grid and select **Add column right**.
+* The layout grid is based on the [Bootstrap Grid system](http://getbootstrap.com/css/#grid) which enables easy responsive layout options.
 22. Click the left-side column to edit it and change the **Weight** to **1** as the weight of the columns in a layoutgrid has to add up to 12.
 23. In the new column (which is now the middle column), right-click and select **Add widget** > **Button** > **Open page button**.
 24. Select the **CargoType_NewEdit** page that you just created.
 25. Click the new button and change its caption to **Edit**.
-26. The menu on the right-side of the screen is empty, so drag the **DataAdministrationMenu** snippet (from the **Step 4** folder) into it.
+26. Simply drag and drop the **DataAdministrationMenu** snippet (from the **Step 4** folder) into the right side of the page to make it consistent with the other pages.
 27. Click the **New** button on the page and in the **Properties pane**, change the **Button style** to **Success** so that it is in line with the styling on the other pages.
 28. Click the **Description** input field in the right-side column and in the **Properties** pane, change **Show label** to **No**.
 29. Save the changes, click **Run Locally**, then click **View App**.
 30. Refresh the browser and navigate to the **Cargo Types** page.
 31. No items are found, but now you are able to click **New** and edit a cargo type.
-32. Add the **Description** of *Bananas*, set the **Temperature threshold** to *10.00*, and set **Has temperature threshold** to **Yes**. You will now see the **Bananas** cargo type object in the list.
+32. Add the **Description** of *Bananas*, set the **Temperature threshold** to *10.00*, and set **Has temperature threshold** to **Yes**. You will now see the **Bananas** cargo type you just created in the list.
 
 ### 4.2 Improving the Look and Feel of a Page
 
@@ -171,8 +172,8 @@ To improve the look and feel of this page, follow these steps:
 8. Observe the changes in the app. Looks better, right?
 
 ### 4.3 Adding a New Input to a Page
-
-In this section, you are going to add a reference selector to the **Shipment** editor page for selecting the cargo type.
+At this point you have created the possibility to associate shipments with cargo types from a data perspective.
+In this section, you are going to enrich the user interface with an extra input option so that a user is able to associate shipments  with cargo types.
 
 To add a new input to this page, follow these steps:
 
@@ -186,11 +187,11 @@ To add a new input to this page, follow these steps:
 
 ## 5 Creating Alerts
 
-In this section, you are going to configure the creation of alerts for when the cargo exceeds the temperature threshhold.
+In this section, you will learn how to use business logic to configure the creation of alerts for when the cargo exceeds the temperature threshold.  
 
 ### 5.1 Extending the OnMessage Flow to Create Alerts
 
-If the temperature threshhold has been exceeded, an alert needs to be created. To extend the OnMessage flow to create alerts, follow these steps:
+If the temperature threshold has been exceeded, an alert needs to be created. To extend the OnMessage microflow to create alerts, follow these steps:
 
 1. Open the **IVK_OnMessage_HandleData_CreateTemperatureAlert** microflow (from the **Step 5.1** folder).
 2. Add a **Retrieve** activity and keep the **Source** as **By association**.
@@ -198,7 +199,7 @@ If the temperature threshhold has been exceeded, an alert needs to be created. T
 4. Insert an **Exclusive split** to check that the object is available (as in, not empty). In the **Expression** editor, add `$CargoType != empty`.
 5. Insert another **Exclusive split** that will check that the temperature threshold exists. In the **Expression** editor, add `$CargoType/HasTemperatureThreshold`.
 6. Set the condition value on this flow as **true**.
-7. Insert one more **Exclusive split** that will check if the temperature is higher than the threshold. In the **Expression** editor, add `$SensoirData/AmbientTemp > $CargoType/TemperatureThreshold`.
+7. Insert one more **Exclusive split** that will check if the temperature is higher than the threshold. In the **Expression** editor, add `$SensorData/AmbientTemp > $CargoType/TemperatureThreshold`.
 8. Set the condition value on this flow as **true**.
 9. Add a **Create object** activity on this flow.
 10. Select **Alert** for the **Entity** and set **Commit** to **Yes**.
@@ -209,7 +210,8 @@ If the temperature threshhold has been exceeded, an alert needs to be created. T
 15. Drag the **false** flow from each exclusive split to the merge.
 16. Save the changes, click **Run Locally**, then click **View App**.
 17. On the shipment overview page of the app, select **Container Bananas**, then click **Subscribe**. The data will now come into the indicators.
-18. The temperature threshold was set to 30 degrees, so when the temperature goes above 30, you will get an alert. Click the alerts icon in the upper-right side of the screen. This will open the **Current alerts** panel, where you will see the newest alert.
+18. In order to generate alerts you need to make sure the temperature threshold, which you can configure on the Cargo Type edit page, is lower than the temperature data being pushed to the app.
+19. The temperature threshold was set to 30 degrees in this example, so when the temperature goes above 30, you will get an alert. Click the alerts icon in the upper-right side of the screen. This will open the **Current alerts** panel, where you will see the newest alert.
 
 ### 5.2 Improving Alert Mechanism
 
