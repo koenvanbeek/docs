@@ -144,7 +144,7 @@ To add the cargo type pages, follow these steps:
 20. Click in the page so that its properties become visible in the **Properties** pane. Set the **Navigation > Visible for ** property to **User**.
 21. Return to **CargoType_Overview**, which needs the same look and feel as the other pages. Right-click the left-side column in the grid and select **Add column right**.
 * The layout grid is based on the [Bootstrap Grid system](http://getbootstrap.com/css/#grid) which enables easy responsive layout options.
-22. Click the left-side column to edit it and change the **Weight** to **1** as the weight of the columns in a layoutgrid has to add up to 12.
+22. Click the left-side column to edit it and change the **(Column) Weight** to **1** as the weight of the columns in a layoutgrid has to add up to 12.
 23. In the new column (which is now the middle column), right-click and select **Add widget** > **Button** > **Open page button**.
 24. Select the **CargoType_NewEdit** page that you just created.
 25. Click the new button and change its caption to **Edit**.
