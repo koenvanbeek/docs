@@ -29,7 +29,7 @@ Before starting this how-to, create a new instance of the **Logistics IoT** app 
 * **Tutorial_Workspace** is the module in which you will be making the changes
 * **Tutorial_Completed** has the full final version of the app model to use as an example
 
-## 3 Deploying and Viewing Your App
+## 3 How to Build an IoT App
 
 Start by running the application so that you can experience how this app looks. You will see how you can switch between your workspace and the completed example app.
 
@@ -42,7 +42,7 @@ To deploy and view the app, follow these steps:
 5. On the right-side of the screen, click the toggle with the user icon (located above the **Feedback** button). Switch to the **Tutorial_completed** section of the app, which contains the completed pages for you to use as a reference. **Tutorial_completed** and **Tutorial_workspace** both have their own data set. ![alt text](attachments/build-an-iot-app/user-switcher.png "Use the user switcher to toggle between demo users.")
 6. Click a container from the shipment overview to inspect the page with the container sensor details. This is the page that you are going to build in this tutorial.
 
-## 4 Connecting App Pages
+### Step 1 -  Connecting App Pages
 
 In this section, you are going to observe the app in the development environment. You will make your first change, which will enable you to view the live details of the shipments listed on the shipments overview.
 
@@ -57,7 +57,7 @@ To connect an app page, follow these steps:
 7. Click the menu button in the top-right corner of the app and select **Shipments**.
 8. Click **Edit** on the preconfigured shipment, which will bring you to the **Shipment** form, where you can edit the details about the shipment.
 
-## 5 Configuring the Sensor Data Subscription
+### Step 2 -  Configuring the Sensor Data Subscription
 
 In this section, you will connect a shipment to an IoT device so the data that the device is generating can be used.
 
@@ -77,7 +77,7 @@ To configure the sensor data subscription, follow these steps:
 9. Refresh the app in the browser, then click **Subscribe** and notice that you get a confirmation message. At this point you won't see anything happening in the app as you configured the app to log the messages it receives from AWS.
 10. Return to the Modeler and observe the **Console**. Double-click the log message **Sensor data received**, which will open the **View Log Line Details** pop-up window, where you can see the **Topic** and **Payload** (JSON) in the **Message** section. Receiving this kind of log message means you have just connected to AWS and are receiving real world data!
 
-## 6 Handling the Sensor Data
+### Step 3 - Handling the Sensor Data
 
 In the previous section, you verified that you are receiving data. This is exciting because now we can take this data and handle it the way we like! In this section, you are going to process the data you receive in order to make it visible on the details page of the shipment.
 
@@ -96,11 +96,11 @@ To configure the handling of the sensor data, follow these steps:
 5. Save the changes, click **Run Locally**, then click **View App**.
 6. In the app, click **Subscribe** and observe the temperature chart updating as data is being pushed to the app!
 
-## 7 Adding Another Data Dimension to the App
+### Step 4 - Adding Another Data Dimension to the App
 
 Now that data is received we can implement functionality to act on any outliers in the data. In this section, you are going to create alerts when thresholds for different measurements are met. 
 
-### 7.1 Adding Cargo Type Pages
+#### Step 4.1 - Adding Cargo Type Pages
 
 Not every cargo type should have the same threshold. Before you start working on the alert implementation, you are going to introduce a cargo type and register its thresholds for different measurements (for example, temperature and light). For an example scenario here, if a ship is transporting perishable goods, you will want to see an alert for any extreme activity with the indicators. 
 
@@ -156,7 +156,7 @@ To add the cargo type pages, follow these steps:
 31. No items are found, but now you are able to click **New** and edit a cargo type.
 32. Add the **Description** of *Bananas*, set the **Temperature threshold** to *10.00*, and set **Has temperature threshold** to **Yes**. You will now see the **Bananas** cargo type you just created in the list.
 
-### 7.2 Improving the Look and Feel of a Page
+#### Step 4.2 - Improving the Look and Feel of a Page
 
 When you observe the **Cargo Types** page in the app, you can see that it is not in line with the other pages you have created. In this section, you will improve the title and the attached image for the cargo.
 
@@ -171,7 +171,7 @@ To improve the look and feel of this page, follow these steps:
 7. Save the changes, click **Run Locally**, then click **View App**.
 8. Observe the changes in the app. Looks better, right?
 
-### 7.3 Adding a New Input to a Page
+#### Step 4.3 - Adding a New Input to a Page
 At this point you have created the possibility to associate shipments with cargo types from a data perspective.
 In this section, you are going to enrich the user interface with an extra input option so that a user is able to associate shipments  with cargo types.
 
@@ -185,11 +185,11 @@ To add a new input to this page, follow these steps:
 6. Click **Edit** for the **TK124097987** shipment.
 7. In the new **Cargo type** field in the **Shipment** editor, select **Bananas** from the drop-down menu, then click **Save**.
 
-## 8 Creating Alerts
+### Step 5 - Creating Alerts
 
 In this section, you will learn how to use business logic to configure the creation of alerts for when the cargo exceeds the temperature threshold.  
 
-### 8.1 Extending the OnMessage Flow to Create Alerts
+#### Step 5.1 - Extending the OnMessage Flow to Create Alerts
 
 If the temperature threshold has been exceeded, an alert needs to be created. To extend the OnMessage microflow to create alerts, follow these steps:
 
@@ -213,7 +213,7 @@ If the temperature threshold has been exceeded, an alert needs to be created. To
 18. In order to generate alerts you need to make sure the temperature threshold, which you can configure on the Cargo Type edit page, is lower than the temperature data being pushed to the app.
 19. The temperature threshold was set to 30 degrees in this example, so when the temperature goes above 30, you will get an alert. Click the alerts icon in the upper-right side of the screen. This will open the **Current alerts** panel, where you will see the newest alert.
 
-### 8.2 Improving Alert Mechanism
+#### Step 5.2 - Improving Alert Mechanism
 
 Now you get an alert every time the temperature exceeds the threshold, which is unnecessary after the initial alert. You need an indicator on a shipment that an alert is active, so now you are going to build some logic that prevents these repetitive alert messages.
 
@@ -231,11 +231,11 @@ To improve the alert mechanism, follow these steps:
 10. On the shipment overview page of the app, select **Container Bananas**, then click **Subscribe**.
 11. Open the **Current alerts** panel by clicking the exclamation mark icon in the top right of the page. You will see a message like this: **Temperature is too high: 15**.
 
-## 9 Adding a New Shipment with a Sensing Device
+### Step 6 - Adding a New Shipment with a Sensing Device
 
 In this section, you are going to expand the shipments that will be tracked by the app.
 
-### 9.1 Adding a New Shipment
+#### Step 6.1 - Adding a New Shipment
 
 To add a new shipment, follow these steps:
 
@@ -254,7 +254,7 @@ To add a new shipment, follow these steps:
 13. Save the changes, click **Run Locally**, then click **View App**.
 14. On the **Global shipments** page of the app, click **New**. This adds a new shipment to the homepage. If you'd like to see a detailed shipment instance on the app homepage, you can fill in the details on the **Edit Shipment** form.
 
-### 9.2 Improving the Input Form
+#### Step 6.2 - Improving the Input Form
 
 To improve the input form, follow these steps:
 
