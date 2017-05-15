@@ -120,7 +120,8 @@ To add the cargo type pages, follow these steps:
 7. In the Domain Model, drag an association from **Shipment** to **CargoType** (Not the other way around!). This means that each Shipment object can be associated to one of the Cargo type objects available.
 8. Open the **Homepage** again. The right-side menu is a snippet, which means it can be reused across various pages. Right-click it and select **Show snippet**. This will open the snippet editor.
 9. The snippet contains a navigation list widget. To edit the third navigation list item, do the following:<br>
-    a. Right-click the row of the navigation where the **Cargo Types** label is located and select **Edit action** > **Show a page**.<br>
+    a. Right-click the gray bar in the row of the navigation list where the **Cargo Types** label is located and select **Edit action** > **Show a page**.<br>
+    ![alt text](attachments/build-an-iot-app/select-navigation-list-row.png "Selected row of the navigation list")
     b. To connect a new page to the navigation list item, click **New** in the **Select page** dialog box. This opens the **Create Page** editor.<br>
     c. Enter *CargoType_Overview* for the **Page name** and select **TopBar_Sidebar_Full_Responsive** for the **Navigation layout**.<br>
     d. Select **Grids** and then **Listview basic**.<br>
@@ -134,6 +135,7 @@ To add the cargo type pages, follow these steps:
 16. Delete the other two input fields as well as the **See details** button, because you only want to show the **Description**.
 17. In order to add new 'Cargo type' items in the application you need to create a page where you can submit new cargo types. So now do the following:<br>
     a. Right-click the row of the outer layout grid and select **Insert row above**.<br>
+    
     b. Select the default **full** row option.<br>
     c. Right-click the new row and select **Add widget** > **Button** > **Create button**.<br>
     d. In the **Select entity** dialog box, select **CargoType**.<br>
