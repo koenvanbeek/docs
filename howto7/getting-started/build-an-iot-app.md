@@ -87,7 +87,7 @@ To configure the handling of the sensor data, follow these steps:
 2. Change the **On message microflow** to **IVK_OnMessage_HandleData** (located in the **Step 3** folder), which is the microflow that is triggered whenever AWS is sending data. It was originally configured to appear in the **Console**, and now you are configuring it to appear on the page.
     * The **Payload** parameter contains a message in JSON format, which is a lightweight data-interchange format. To work with this data we need to turn it into an object by mapping the JSON message to an entity. In this microflow the JSON message is mapped to a **SensorData** object. The **Topic** parameter is used to retrieve the **Topic** object from the database in order to retrieve the **Shipment object** associated to it.
 3. Now you need to associate the shipment object with the sensor data object created from the JSON response. Add a **Change object** activity and double click it to edit it. Set the **Variable** to **SensorData**, and set **Commit** to **Yes**, which will persist the object to the database. Click **New** to add the **Tutorial_Workspace.SensorData_Topic** attribute and enter this **value**: `$TopicObject`.
-4. On the details page we like to show the date ad time the latest sensor data is received. For this you need to add a **Change object** activity to the flow:<br>
+4. On the details page we like to show the date and time the latest sensor data is received. For this you need to add a **Change object** activity to the flow:<br>
     a. Set the **Variable** to **Shipment**.<br>
     b. Set **Commit** to **Yes**.<br>
     c. Click **New** to add a new change item. Set the **Member** to **LatestSensorUpdate**.<br>
