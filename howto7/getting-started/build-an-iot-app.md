@@ -121,7 +121,7 @@ To add the cargo type pages, follow these steps:
 8. Open the **Homepage** again. The right-side menu is a snippet, which means it can be reused across various pages. Right-click it and select **Show snippet**. This will open the snippet editor.
 9. The snippet contains a navigation list widget. To edit the third navigation list item, do the following:<br>
     a. Right-click the gray bar in the row of the navigation list where the **Cargo Types** label is located and select **Edit action** > **Show a page**.<br>
-    ![alt text](attachments/build-an-iot-app/select-navigation-list-row.png "Selected row of the navigation list")
+    ![alt text](attachments/build-an-iot-app/select-navigation-list-row.png "Selected row of the navigation list")<br>
     b. To connect a new page to the navigation list item, click **New** in the **Select page** dialog box. This opens the **Create Page** editor.<br>
     c. Enter *CargoType_Overview* for the **Page name** and select **TopBar_Sidebar_Full_Responsive** for the **Navigation layout**.<br>
     d. Select **Grids** and then **Listview basic**.<br>
