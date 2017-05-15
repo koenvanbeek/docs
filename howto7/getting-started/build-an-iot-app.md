@@ -65,6 +65,7 @@ To configure the sensor data subscription, follow these steps:
 
 1. In the Modeler, open the **Shipment_Detail** page.
 2. Right-click the left-side column of the layout grid (in which **Movement**, **Temperature**, etc. are also located) and select **Add widget** > **Button** > **Call microflow button**.
+![alt text](attachments/build-an-iot-app/select-layoutgrid-column.png "Area to select in the layout grid")
 3. In the **Select Microflow** dialog box, select the **IVK_Subscribe** microflow. You can find it by typing **IVK_Subscribe** in the *Filter* input box.
 4. Double-click the button and enter the caption of *Subscribe*.
 5. Right-click the button and select **Go to microflow** to inspect the microflow.
