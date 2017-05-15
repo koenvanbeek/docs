@@ -26,9 +26,6 @@ This app obtains and measures data from various sensors in individual cargo ship
 
 Before starting this how-to, create a new instance of the **Logistics IoT** app using the [Mendix Platform Portal](https://home.mendix.com/link/startnewproject). After the Logistics IOT app has been created, you can open the app in the Modeler ([download](https://appstore.mendix.com/link/modelers) and install the Modeler in case you haven't done so already).
 
-Before starting this tutorial, create a new instance of the Logistics IoT app using the [Mendix Platform Portal](https://sprintr.home.mendix.com/link/startnewproject). After the **Logistics IOT** app has been created you can open the app in the Modeler. 
-[Download](https://appstore.mendix.com/link/modelers) and install the Modeler in case you haven't done so already.
-
 * **Tutorial_Workspace** is the module in which you will be making the changes
 * **Tutorial_Completed** has the full final version of the app model to use as an example
 
