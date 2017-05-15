@@ -117,7 +117,7 @@ To add the cargo type pages, follow these steps:
      c. Grant **Read, Write** privileges for all members using the **Read,Write** button.<br>
      d. Click **OK**.<br>
 ![alt text](attachments/build-an-iot-app/access-rules.png "Access rules for the CargoType entity")
-7. In the Domain Model, drag an association from **Shipment** to **CargoType**. This means that each Shipment object can be associated to one of the Cargo type objects available.
+7. In the Domain Model, drag an association from **Shipment** to **CargoType** (Not the other way around!). This means that each Shipment object can be associated to one of the Cargo type objects available.
 8. Open the **Homepage** again. The right-side menu is a snippet, which means it can be reused across various pages. Right-click it and select **Show snippet**. This will open the snippet editor.
 9. The snippet contains a navigation list widget. To edit the third navigation list item, do the following:<br>
     a. Right-click the row of the navigation where the **Cargo Types** label is located and select **Edit action** > **Show a page**.<br>
