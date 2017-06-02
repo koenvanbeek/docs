@@ -55,7 +55,10 @@ To improve the input form, follow these steps:
 7. In the **Properties** for the microflow, set **Allowed roles** to **User**.
 8. Save the changes, click **Run Locally**, and click **View App**. Observe how the **Topic** drop-down menu only includes the topics that are available.
 
-## 4 Related Content
+## 4 Feedback
+We are very interested in your feedback on this tutorial. You can share you feedback with us by answering 5 short questions in our [how-to survey](https://www.surveymonkey.com/r/ZCRJSP3). Your feedback is much appreciated! 
+
+## 5 Related Content
 
 * [How to Build an IoT App](build-an-iot-app)
 * [How to Build an IoT App Step 1: Connect App Pages](build-an-iot-app-1)
