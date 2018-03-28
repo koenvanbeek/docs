@@ -12,7 +12,7 @@ With these how-to's, you can learn how to translate your business logic into mic
 
 * [How to Create Your First Microflow: Hello World!](create-your-first-microflow-hello-world)
 * [How to Create a Custom Save Button](create-a-custom-save-button)
-* [How to Drag Microflows and Pages into Microflow](drag-microflows-and-pages-into-a-microflow)
+* [How to Drag Microflows and Pages into a Microflow](drag-microflows-and-pages-into-a-microflow)
 * [How to Extract and Use Sub Microflows](extract-and-use-sub-microflows)
 * [How to Trigger Logic Using Microflows](triggering-logic-using-microflows)
 * [How to Work with Lists in a Microflow](working-with-lists-in-a-microflow)
